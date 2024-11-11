@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayjs</title>
+</head>
+<body>
+    <script type="module">
+        import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+        const today = dayjs();
+        const todayStr = today.format('dddd, MMMM D');
+
+        const day5FromNow = today.add(5, 'days');
+        const day5FromNowStr = day5FromNow.format('dddd MMMM D')
+
+        console.log('Today:\t\t\t\t\t', todayStr)
+        console.log('5 days from now:\t\t', day5FromNowStr)
+
+        // adding month
+        const oneMonthFromNow = today.add(1, 'month');
+        const oneMonthFromNowStr = oneMonthFromNow.format('dddd MMMM D')
+        console.log('One Month from today: \t', oneMonthFromNowStr);
+
+        // subtracting Month
+        const oneMonthBeforeNow = today.subtract(1, 'month');
+        const oneMonthBeforeNowStr = oneMonthBeforeNow.format('dddd MMMM D');
+        console.log('One month before today:\t', oneMonthBeforeNowStr);
+
+        // day name
+        console.log('Today week name:\t\t', today.format('dddd'));
+
+        function isWeekend(date){
+            const weekendDays = ['sunday', 'saturday'];
+            const todayDay = date.format('dddd').toLowerCase();
+
+            if (weekendDays.includes(todayDay)){
+                return true;
+            } 
+            return false;c                
+        };
+        // const today2 = dayjs().add(3, 'days')
+        console.log('is today weekend day?:\t', isWeekend(today))
+
+
+        // function countWeekendDays(days) {
+        //     const today = dayjs();
+        //     console.log(today.format('dddd'))
+        //     let weekendDays = 0;
+        //     for (let x = 1; x <= days; ++x) {
+        //         let nextDay = today.add(x, 'day');
+        //         if (isWeekend(nextDay)) {
+        //             weekendDays++;
+        //         }
+        //     }
+        //     console.log(weekendDays);
+        //     // console.log('days + removed days', days + weekendDays)
+        //     return today.add((days + weekendDays), 'days').format('dddd, MMMM, D')
+        // }
+        // console.log(countWeekendDays(7));
+    </script>
+</body>
+</html>

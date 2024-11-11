@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidelink</title>
+
+    <style>
+        button{
+            height: auto;
+            background-color: bisque;
+            border: none;
+            border-radius: 8px;
+            padding: .3rem 1rem;
+            position: absolute;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <button>Click on me :)</button>
+
+    <script>
+        let button = document.querySelector('button');
+        let isLeft = false;
+
+        button.addEventListener('mouseover', changePosition)
+
+        function changePosition(){
+            if (!isLeft){
+                button.classList.add('right');
+                button.classList.remove('left');
+                isLeft = true;
+            } else {
+                button.classList.add('left');
+                button.classList.remove('right');
+                isLeft = false;
+            };
+        }
+    </script>
+</body>
+</html>

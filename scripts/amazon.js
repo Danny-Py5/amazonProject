@@ -1,6 +1,6 @@
 import {cart, addToCart} from '../data/cart.js';  // import * as cartModule from '../data/cart.js';  // this enables us to use as cartModule.cart
 import {products} from '../data/products.js';
-import {formartCurrency} from './utils/money.js';
+import {formatCurrency} from './utils/money.js';
 
 
 updateCartQuantity();
@@ -28,7 +28,7 @@ products.forEach(product => {
             </div>
 
             <div class="product-price">
-                $${formartCurrency(product.priceCents)}
+                $${formatCurrency(product.priceCents)}
             </div>
 
             <div class="product-quantity-container">
@@ -48,7 +48,7 @@ products.forEach(product => {
 
             <div class="product-spacer"></div>
 
-            <div class="added-to-cart js-added-to-cart-${product.id}">
+            <div class="added-to-cart js-added-to-cart js-added-to-cart-${product.id}">
                 <img src="images/icons/checkmark.png">
                 Added
             </div>
@@ -78,6 +78,7 @@ function updateCartQuantity() {
 let timeoutID;
 document.querySelectorAll('.js-add-to-chart').forEach(button => {
     button.addEventListener('click', () => {
+        clearAddToCartPupUps();
         // get product id and quantity-selected of which button is clicked
         // const productName = button.getAttribute('data-product-name');  // using .dataset returns list of all dataset of an element but getAttribute returns just a specific value of which classname is selected.
         
@@ -101,5 +102,11 @@ document.querySelectorAll('.js-add-to-chart').forEach(button => {
         // console.log(cartQuantity);
     });
 });
+
+function clearAddToCartPupUps() {
+    document.querySelectorAll('.js-added-to-cart').forEach(pupUp => {
+        pupUp.classList.remove('show-added-to-cart-popup');
+    })
+}
     
 

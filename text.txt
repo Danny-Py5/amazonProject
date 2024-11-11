@@ -1,0 +1,69 @@
+external library 
+
+external library let us share code 
+- save time 
+- avoid duplicating work
+
+
+when you update data and regenerate all the HTML is Called MVC. this is A popular technique in sofware engiener.
+
+MVC means Model - View - Controller
+
+Model: Saves and manages the data 
+View: takes the data and displays it on the page(generating the HTML)
+Controller: Runs some code when we interact with the page
+
+MVC is a design pattern
+
+
+
+|||||||||||||||||||||||||||||||  Testing  Using Jasmine |||||||||||||||||||||||||||||||||
+describe() means (Suite): the group of relating tests. takes 2 args the discription of the
+suite and a function that group each test. each test is created using it(), 'it' means a test. 
+in the 'it()' we write the test for a case or edge case 
+
+
+case:
+----
+thing a function being test basically does, for example, testing if a function that add numbers can 
+correctly add 2 + 2;  
+
+edge case:
+----------
+this is just like testing harder, for example: testing if a function that add number can add 0 + 0
+whithout error; or adding nagative numbers successfully
+
+
+`````
+ChatGPT's Suggetion 
+
+Testing Using Jasmine
+describe()
+    Definition: A function that creates a test suite, grouping related tests together.
+        Arguments: Takes two arguments:
+        - A string that describes the suite (e.g., "Addition Function Tests").
+        - A function that contains the test cases.
+    Purpose: Organizes tests into logical sections, improving readability and maintainability.
+it()
+    Definition: A function that defines a single test case.
+    Purpose: Tests a specific behavior or functionality of the code.
+    Arguments: Takes two arguments:
+    - A string describing the test (e.g., "should add two positive numbers").
+    - A function containing the test logic.
+
+
+Case
+    Definition: A standard scenario where the function is expected to perform correctly.
+    Example: Testing if the function that adds numbers can correctly calculate 2 + 2.
+Edge Case
+    Definition: A scenario that tests the limits or unusual conditions for the function.
+    Examples:
+        Testing if the function can correctly add 0 + 0 without errors.
+        Adding negative numbers (e.g., -5 + -3) to ensure it handles them correctly.
+        Testing with very large numbers or unexpected input types (e.g., strings or null) to check for robustness.
+
+
+Flaky Test = test that sometimes passes and sometimes fails;
+
+
+
